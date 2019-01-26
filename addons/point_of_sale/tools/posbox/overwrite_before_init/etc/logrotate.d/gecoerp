@@ -1,0 +1,5 @@
+/var/log/gecoerp/*.log {
+    copytruncate
+    missingok
+    notifempty
+}
