@@ -1,5 +1,5 @@
 # gecoerp
-Software de Código Abierto ERP, MRP, HRP y CRM - Forked From Odoo
+Software de Código Abierto ERP, MRP, HRP y CRM - Forked From Odoo 11
 
 * Free software: gecoerp Licence (LGPL-v3)
 * Sitio Web y Documentation: https://www.gecoerp.com/
