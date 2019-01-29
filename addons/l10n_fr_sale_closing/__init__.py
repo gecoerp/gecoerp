@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 from . import models
 from gecoerp import api, SUPERUSER_ID
 from ..l10n_fr_certification.models.res_company import UNALTERABLE_COUNTRIES

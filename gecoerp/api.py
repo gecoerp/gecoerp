@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 
 """ This module provides the elements for managing two different API styles,
     namely the "traditional" and "record" styles.

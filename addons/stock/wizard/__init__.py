@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 
 from . import stock_picking_return
 from . import stock_change_product_qty

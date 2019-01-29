@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 
 from gecoerp.api import Environment
 from gecoerp.tools import DEFAULT_SERVER_DATE_FORMAT

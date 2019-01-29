@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 
 from gecoerp.tests import common
 from gecoerp.addons.calendar.models.calendar import calendar_id2real_id

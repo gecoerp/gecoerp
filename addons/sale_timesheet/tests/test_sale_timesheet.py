@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 from gecoerp.tools import float_is_zero, float_compare
 
 from gecoerp.addons.sale_timesheet.tests.common import CommonTest

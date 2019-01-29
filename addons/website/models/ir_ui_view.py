@@ -1,5 +1,5 @@
 # -*- coding: ascii -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 
 import logging
 from itertools import groupby

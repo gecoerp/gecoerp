@@ -1,4 +1,4 @@
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 {
     'name' : 'Products Expiration Date',
     'category' : 'Warehouse',

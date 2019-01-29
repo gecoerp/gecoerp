@@ -1,5 +1,5 @@
 import gecoerp.tests
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 
 @gecoerp.tests.common.at_install(False)
 @gecoerp.tests.common.post_install(True)

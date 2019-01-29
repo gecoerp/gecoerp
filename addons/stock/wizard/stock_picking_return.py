@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See ICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See ICENSE file for full copyright and licensing details.
 
 from gecoerp import api, fields, models, _
 from gecoerp.addons import decimal_precision as dp

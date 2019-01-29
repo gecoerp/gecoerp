@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of UNO, GECOERP. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, GECOERP. See LICENSE file for full copyright and licensing details.
 
 from gecoerp import api, fields, models
 from gecoerp.addons.base.res.res_partner import WARNING_MESSAGE, WARNING_HELP
