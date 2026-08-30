@@ -32,12 +32,9 @@ sessions/
 addons/**/__pycache__/
 *.stackdump
 
-# Large/Private Asset Files
-addons/*.zip
-addons/*.pdf
+# Addons Directory (excluded from this repository)
+addons/
 
-# Backups & Temp Addons
-addons/*_backup*/
 addons/geco_ui_theme_core_backup_v1/
 
 # Core Odoo 18 Base Repo (si se clona externamente)
