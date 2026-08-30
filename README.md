@@ -36,7 +36,7 @@ To learn the software, we recommend the [GECO ERP Knowledge Base](https://www.ge
 
 3. **Start the GECO ERP Service:**
    ```bash
-   python odoo-bin -c gecoerp.conf
+   python gecoerp-bin -c gecoerp.conf
    ```
    Open your browser at `http://localhost:8069`.
 
