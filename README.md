@@ -14,7 +14,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Version-1.0.0-0f172a?style=for-the-badge" alt="GECO ERP 1.0"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-LGPL--3.0-green.svg?style=for-the-badge" alt="License LGPL-3.0"/></a>
-  <a href="mailto:mcabanas@gecoerp.com"><img src="https://img.shields.io/badge/Lead-Manuel%20Cabañas-fe5031?style=for-the-badge&logo=gmail&logoColor=white" alt="Contact"/></a>
+  <a href="mailto:mcabanas@gecoerp.com"><img src="https://img.shields.io/badge/Author-GECOERP-fe5031?style=for-the-badge&logo=gmail&logoColor=white" alt="Contact"/></a>
 </p>
 
 ---
@@ -127,7 +127,7 @@ Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ```text
 Copyright (c) 2026 GECOERP — Gestión Empresarial y Competencia Empresarial
-Líder de Proyecto: Manuel Cabañas
+Todos los derechos reservados.
 Email: mcabanas@gecoerp.com
 Sitio Web: https://www.gecoerp.com
 GitHub: https://github.com/gecoerp
