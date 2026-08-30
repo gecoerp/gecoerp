@@ -1,55 +1,96 @@
-# GECO ERP & GECO Prime
+# GECO — Intelligent Enterprise Platform
 
-[![1.0 build](https://img.shields.io/badge/1.0-success-4c1?style=flat-square)](https://github.com/gecoerp/gecoerp)
-[![edition](https://img.shields.io/badge/edition-GECO%20Prime-0066cc?style=flat-square)](https://www.gecoerp.com)
-[![1.0 docs](https://img.shields.io/badge/1.0-docs-0066cc?style=flat-square)](https://www.gecoerp.com)
-[![1.0 help](https://img.shields.io/badge/1.0-help-0066cc?style=flat-square)](https://www.gecoerp.com)
-[![1.0 releases](https://img.shields.io/badge/1.0-releases-0066cc?style=flat-square)](https://github.com/gecoerp/gecoerp/releases)
+[![platform](https://img.shields.io/badge/platform-GECO_v1.0-0066cc?style=flat-square)](https://github.com/gecoerp/gecoerp)
+[![edition](https://img.shields.io/badge/edition-GECO_Prime-0066cc?style=flat-square)](https://www.gecoerp.com)
+[![build](https://img.shields.io/badge/build-passing-4c1?style=flat-square)](https://github.com/gecoerp/gecoerp)
+[![architecture](https://img.shields.io/badge/architecture-Microservices_%26_Modular-0f172a?style=flat-square)](https://www.gecoerp.com)
+[![docs](https://img.shields.io/badge/docs-available-0066cc?style=flat-square)](https://www.gecoerp.com)
 
-GECO ERP is a suite of modern enterprise business applications. **GECO Prime** represents the premier edition, delivering an executive UI/UX experience, omnichannel WhatsApp communication, AI & MCP intelligence, and advanced multi-warehouse operations.
+**GECO** is a next-generation **Intelligent Enterprise Platform** designed to unify corporate operations, automate mission-critical workflows, and deliver real-time predictive business intelligence.
 
-The main GECO ERP & GECO Prime Apps include an [Enterprise CRM](https://www.gecoerp.com), [Sales Management](https://www.gecoerp.com), [Multi-Warehouse Inventory](https://www.gecoerp.com), [Purchasing & Supply Chain](https://www.gecoerp.com), [Billing & Financial Accounting](https://www.gecoerp.com), [Point of Sale (POS)](https://www.gecoerp.com), [Human Resources (HRMS)](https://www.gecoerp.com), [Omnichannel WhatsApp Integration](https://www.gecoerp.com), [AI & MCP Intelligence Core](https://www.gecoerp.com), ...
-
-GECO ERP Apps can be used as stand-alone applications, but they also integrate seamlessly so you get a full-featured Enterprise ERP when you install several Apps.
-
-## Getting started with GECO ERP
-
-For a standard installation please follow the [Setup instructions](#setup-instructions) from the documentation.
-
-To learn the software, we recommend the [GECO ERP Knowledge Base](https://www.gecoerp.com). Developers can start with the developer tutorials and API documentation.
-
-### Setup instructions
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/gecoerp/gecoerp.git
-   cd gecoerp
-   ```
-
-2. **Environment Setup:**
-   ```bash
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1  # Windows PowerShell
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-
-3. **Start the GECO ERP Service:**
-   ```bash
-   python gecoerp-bin -c gecoerp.conf
-   ```
-   Open your browser at `http://localhost:8069`.
-
-## Security
-
-If you believe you have found a security issue, check our [Responsible Disclosure page](https://www.gecoerp.com) for details and get in touch with us via email at [mcabanas@gecoerp.com](mailto:mcabanas@gecoerp.com).
-
-## License
-
-This software is copyrighted by **GECOERP — Gestión Empresarial y Competencia Empresarial**.  
-Licensed under the **GNU Lesser General Public License v3.0 (LGPL-3.0)**. See the [LICENSE](LICENSE) file for details.
+Engineered for scalability and modern enterprise ergonomics, the flagship **GECO Prime** edition combines an executive UI/UX design, native omnichannel WhatsApp communications, multi-warehouse supply chain intelligence, and deep integration with autonomous **AI & MCP** (*Model Context Protocol*) data agents.
 
 ---
 
-Copyright (c) 2026 GECOERP. All rights reserved.  
-Website: [https://www.gecoerp.com](https://www.gecoerp.com)
+## 🚀 Core Platform Capabilities
+
+### 1. GECO Intelligence Core (AI & MCP)
+* **Autonomous BI Agents:** Natural language querying over sales velocity, stock levels, cash flow projections, and purchasing cycles.
+* **Model Context Protocol (MCP):** Enterprise-grade bridge connecting large language models (LLMs) securely with operational business databases.
+* **Automated Decision Support:** Real-time anomaly detection and predictive replenishment recommendations.
+
+### 2. GECO Connect & Omnichannel Hub
+* **Native WhatsApp Business API:** Automated dispatch of purchase orders, invoices, shipment tracking, and quotations directly to customers and vendors.
+* **Conversational Interaction:** Unified interactive chatters and customer timeline traceability.
+
+### 3. GECO Supply Chain & Operations
+* **Multi-Warehouse Optimization:** Distributed stock allocations, dynamic routing, and automated cross-warehouse transfers.
+* **Procurement Operations:** Order-type classification, vendor scorecards, and executive analytical dashboards.
+
+### 4. GECO Commercial & Finance
+* **Revenue Operations:** Real-time pipeline forecasting, sales commission automation, and dynamic pricing engines.
+* **Financial Ledger & Compliance:** Multi-currency ledgers, automated reconciliation, and executive financial health metrics.
+
+### 5. GECO Prime Experience
+* **Executive Glassmorphic UI:** Minimalist high-contrast interfaces, smart command palettes, and responsive multi-device layouts.
+* **Fluid Lateral Drawer:** Instant fuzzy search across every module, action, and record in milliseconds.
+
+---
+
+## ⚡ Deployment & Quickstart
+
+### Prerequisites
+* **Python Runtime:** 3.10 / 3.11 / 3.12
+* **Database Engine:** PostgreSQL 14+
+* **Environment:** Linux / macOS / Windows Server
+
+### 1. Clone & Setup
+```bash
+git clone https://github.com/gecoerp/gecoerp.git
+cd gecoerp
+```
+
+### 2. Virtual Environment
+```bash
+python -m venv .venv
+# On Windows PowerShell:
+.\.venv\Scripts\Activate.ps1
+# On Linux/macOS:
+source .venv/bin/activate
+
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 3. Launch GECO Platform
+Configure your database settings in `gecoerp.conf` and start the server:
+```bash
+python gecoerp-bin -c gecoerp.conf
+```
+Access the management console at: `http://localhost:8069`
+
+---
+
+## 🔒 Security & Compliance
+
+For security disclosures or enterprise vulnerability reports, please reach out directly to our security team at [mcabanas@gecoerp.com](mailto:mcabanas@gecoerp.com).
+
+---
+
+## 📜 Intellectual Property & Licensing
+
+GECO Platform and GECO Prime are proprietary technologies developed by **GECOERP (Gestión Empresarial y Competencia Empresarial)**.  
+Licensed under the **GNU Lesser General Public License v3.0 (LGPL-3.0)**. See [LICENSE](LICENSE) for full legal terms.
+
+```text
+Copyright (c) 2026 GECOERP — Gestión Empresarial y Competencia Empresarial
+Corporate Portal: https://www.gecoerp.com
+Repository: https://github.com/gecoerp
+Contact: mcabanas@gecoerp.com
+```
+
+---
+
+<p align="center">
+  <strong>GECO Platform</strong> — Empowering Intelligent Enterprise Operations
+</p>
