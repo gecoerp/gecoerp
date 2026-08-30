@@ -21,6 +21,15 @@ htmlcov/
 dist/
 build/
 
+# Local Configuration & Startup Scripts (Private/Local only)
+*.conf
+*.bat
+odoo-bin
+gecoerp-bin
+BITACORA*
+sites-enabled/
+
+
 # Odoo Runtime, Logs & Temporary Files
 *.log
 *.dump
@@ -34,10 +43,10 @@ addons/**/__pycache__/
 
 # Addons Directory (excluded from this repository)
 addons/
-
 addons/geco_ui_theme_core_backup_v1/
 
-# Core Odoo 18 Base Repo (si se clona externamente)
+# Core Base Repo
+odoo/
 odoo-18.0/
 
 # Operating System & IDE Artifacts
