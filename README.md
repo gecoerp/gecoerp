@@ -1,13 +1,14 @@
-# GECO ERP
+# GECO ERP & GECO Prime
 
 [![1.0 build](https://img.shields.io/badge/1.0-success-4c1?style=flat-square)](https://github.com/gecoerp/gecoerp)
+[![edition](https://img.shields.io/badge/edition-GECO%20Prime-0066cc?style=flat-square)](https://www.gecoerp.com)
 [![1.0 docs](https://img.shields.io/badge/1.0-docs-0066cc?style=flat-square)](https://www.gecoerp.com)
 [![1.0 help](https://img.shields.io/badge/1.0-help-0066cc?style=flat-square)](https://www.gecoerp.com)
 [![1.0 releases](https://img.shields.io/badge/1.0-releases-0066cc?style=flat-square)](https://github.com/gecoerp/gecoerp/releases)
 
-GECO ERP is a suite of modern enterprise business applications.
+GECO ERP is a suite of modern enterprise business applications. **GECO Prime** represents the premier edition, delivering an executive UI/UX experience, omnichannel WhatsApp communication, AI & MCP intelligence, and advanced multi-warehouse operations.
 
-The main GECO ERP Apps include an [Enterprise CRM](https://www.gecoerp.com), [Sales Management](https://www.gecoerp.com), [Multi-Warehouse Inventory](https://www.gecoerp.com), [Purchasing & Supply Chain](https://www.gecoerp.com), [Billing & Financial Accounting](https://www.gecoerp.com), [Point of Sale (POS)](https://www.gecoerp.com), [Human Resources (HRMS)](https://www.gecoerp.com), [Omnichannel WhatsApp Integration](https://www.gecoerp.com), [AI & MCP Intelligence Core](https://www.gecoerp.com), ...
+The main GECO ERP & GECO Prime Apps include an [Enterprise CRM](https://www.gecoerp.com), [Sales Management](https://www.gecoerp.com), [Multi-Warehouse Inventory](https://www.gecoerp.com), [Purchasing & Supply Chain](https://www.gecoerp.com), [Billing & Financial Accounting](https://www.gecoerp.com), [Point of Sale (POS)](https://www.gecoerp.com), [Human Resources (HRMS)](https://www.gecoerp.com), [Omnichannel WhatsApp Integration](https://www.gecoerp.com), [AI & MCP Intelligence Core](https://www.gecoerp.com), ...
 
 GECO ERP Apps can be used as stand-alone applications, but they also integrate seamlessly so you get a full-featured Enterprise ERP when you install several Apps.
 
@@ -35,7 +36,7 @@ To learn the software, we recommend the [GECO ERP Knowledge Base](https://www.ge
 
 3. **Start the GECO ERP Service:**
    ```bash
-   .\iniciar_odoo.bat
+   python odoo-bin -c gecoerp.conf
    ```
    Open your browser at `http://localhost:8069`.
 
