@@ -1,0 +1,1245 @@
+/* ==========================================================================
+   GECOERP ORANGE THEME INTEGRATION
+   (Vibrant Flame Orange #fe5031 Palette across All Buttons & Components)
+   ========================================================================== */
+
+/* Fondo general para tableros y vistas */
+.o_content {
+    background-color: #f8fafc !important;
+}
+
+/* Variables de Color Orange Theme */
+:root {
+    --geco-primary: #fe5031;
+    --geco-primary-hover: #e03b1e;
+    --geco-primary-dark: #c43217;
+    --geco-primary-light: #fff4f2;
+    --geco-primary-border: #fed7d2;
+    --geco-gradient-primary: linear-gradient(135deg, #fe5031 0%, #e03b1e 100%);
+    --geco-gradient-flame: linear-gradient(135deg, #df2673 0%, #fe5031 100%);
+}
+
+/* ==========================================================================
+   PRIMARY & OUTLINE BUTTONS (Botón "Nuevo" con texto blanco nítido en fondo naranja)
+   ========================================================================== */
+.btn-primary,
+button.btn-primary,
+a.btn-primary,
+.o_control_panel_main_buttons .btn-primary,
+.o_control_panel_main_buttons .btn.btn-primary,
+.o_form_button_save,
+.o_list_button_add,
+.o_kanban_button_new {
+    background: linear-gradient(135deg, #fe5031 0%, #e03b1e 100%) !important;
+    border: 1px solid #fe5031 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 5px rgba(254, 80, 49, 0.28) !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    padding: 6px 14px !important;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+    *,
+    span,
+    i {
+        color: #ffffff !important;
+    }
+
+    &:hover {
+        background: linear-gradient(135deg, #e03b1e 0%, #c43217 100%) !important;
+        border-color: #e03b1e !important;
+        box-shadow: 0 4px 10px rgba(254, 80, 49, 0.4) !important;
+        transform: translateY(-1px) !important;
+        color: #ffffff !important;
+
+        *,
+        span,
+        i {
+            color: #ffffff !important;
+        }
+    }
+
+    &:active,
+    &:focus {
+        background: #c43217 !important;
+        border-color: #c43217 !important;
+        box-shadow: 0 0 0 3px rgba(254, 80, 49, 0.25) !important;
+        color: #ffffff !important;
+
+        *,
+        span,
+        i {
+            color: #ffffff !important;
+        }
+    }
+}
+
+/* Botones Outline y Secundarios en Panel de Control (ej. Subir) */
+.btn-outline-primary,
+.o_control_panel_main_buttons .btn:not(.btn-primary),
+.o_control_panel_main_buttons .btn-outline-primary,
+.o_form_button_create {
+    color: #fe5031 !important;
+    border: 1.5px solid #fe5031 !important;
+    background-color: #ffffff !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+    &:hover {
+        background: linear-gradient(135deg, #fe5031 0%, #e03b1e 100%) !important;
+        border-color: #fe5031 !important;
+        color: #ffffff !important;
+        box-shadow: 0 2px 6px rgba(254, 80, 49, 0.3) !important;
+        transform: translateY(-1px) !important;
+
+        *,
+        span,
+        i {
+            color: #ffffff !important;
+        }
+    }
+
+    &:active,
+    &:focus {
+        background-color: #e03b1e !important;
+        border-color: #e03b1e !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 0 3px rgba(254, 80, 49, 0.2) !important;
+
+        *,
+        span,
+        i {
+            color: #ffffff !important;
+        }
+    }
+}
+
+.btn-secondary {
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.15s ease !important;
+
+    &:hover {
+        border-color: #fe5031 !important;
+        color: #fe5031 !important;
+    }
+}
+
+/* ==========================================================================
+   CONTROL PANEL & BREADCRUMB ALIGNMENT
+   ========================================================================== */
+.o_control_panel {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 10px 18px !important;
+    min-height: 56px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+
+    .o_control_panel_main {
+        align-items: center !important;
+    }
+
+    .o_control_panel_breadcrumbs {
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+
+        .o_control_panel_main_buttons {
+            display: inline-flex !important;
+            align-items: center !important;
+            margin-right: 4px !important;
+
+            .btn {
+                height: 36px !important;
+                padding: 4px 14px !important;
+                font-size: 13px !important;
+                font-weight: 600 !important;
+                border-radius: 6px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+        }
+
+        .o_breadcrumb {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            gap: 1px !important;
+            min-height: 36px !important;
+
+            ol.breadcrumb {
+                margin-bottom: 0 !important;
+                padding: 0 !important;
+                line-height: 1.1 !important;
+
+                .breadcrumb-item {
+                    font-size: 12px !important;
+                    font-weight: 500 !important;
+                    color: #64748b !important;
+
+                    a {
+                        color: #fe5031 !important;
+                        text-decoration: none !important;
+                        font-weight: 600 !important;
+
+                        &:hover {
+                            color: #e03b1e !important;
+                            text-decoration: underline !important;
+                        }
+                    }
+
+                    &:before {
+                        color: #94a3b8 !important;
+                        padding: 0 4px !important;
+                    }
+                }
+            }
+
+            .o_last_breadcrumb_item {
+                font-size: 15px !important;
+                font-weight: 700 !important;
+                color: #0f172a !important;
+                line-height: 1.2 !important;
+
+                span {
+                    color: #0f172a !important;
+                }
+            }
+        }
+    }
+
+    .o_control_panel_actions {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .o_control_panel_navigation {
+        display: flex !important;
+        align-items: center !important;
+    }
+}
+
+/* ==========================================================================
+   STAT BUTTONS
+   ========================================================================== */
+.o-form-buttonbox {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: transparent !important;
+    border: none !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+    padding: 0 !important;
+
+    > * + * {
+        margin-left: 0 !important;
+    }
+
+    .oe_stat_button,
+    .oe_stat_button > button {
+        border-radius: 8px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+        padding: 4px 12px !important;
+        margin: 0 !important;
+        height: 42px !important;
+        min-width: 105px !important;
+        transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        overflow: visible !important;
+
+        &:hover {
+            background-color: #fff4f2 !important;
+            border-color: #fed7d2 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 10px -1px rgba(254, 80, 49, 0.18) !important;
+
+            .o_button_icon {
+                color: #fe5031 !important;
+                transform: scale(1.08) !important;
+            }
+        }
+
+        .o_button_icon {
+            color: #fe5031 !important;
+            font-size: 17px !important;
+            margin-right: 8px !important;
+            flex-shrink: 0 !important;
+            transition: transform 0.15s ease !important;
+        }
+
+        .d-flex.flex-column {
+            justify-content: center !important;
+            gap: 1px !important;
+        }
+
+        .o_stat_info {
+            line-height: 1.15 !important;
+
+            &.flex-row {
+                display: inline-flex !important;
+                flex-direction: row !important;
+                align-items: baseline !important;
+                gap: 4px !important;
+
+                .o_stat_text {
+                    color: #64748b !important;
+                    font-size: 11px !important;
+                    font-weight: 500 !important;
+                    margin-right: 2px !important;
+                }
+
+                .o_stat_value {
+                    color: #0f172a !important;
+                    font-weight: 700 !important;
+                    font-size: 12.5px !important;
+                }
+            }
+
+            &:not(.flex-row) {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+
+                .o_stat_value {
+                    color: #0f172a !important;
+                    font-weight: 700 !important;
+                    font-size: 13px !important;
+                    line-height: 1.1 !important;
+                }
+
+                .o_stat_text {
+                    color: #64748b !important;
+                    font-size: 10.5px !important;
+                    font-weight: 500 !important;
+                    line-height: 1.2 !important;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   FORM STATUSBAR & CHEVRON WORKFLOW PIPELINE
+   ========================================================================== */
+.o_form_view {
+    .o_form_sheet_bg {
+        background-color: #f8fafc !important;
+        padding: 16px 20px !important;
+
+        .o_form_sheet {
+            background-color: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 14px !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03) !important;
+            padding: 24px 32px !important;
+        }
+    }
+
+    /* Barra de Estado (Statusbar) */
+    .o_form_statusbar {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        min-height: 48px !important;
+        height: auto !important;
+        padding: 6px 12px !important;
+        margin-top: 0 !important;
+        margin-bottom: 14px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+
+        .o_statusbar_buttons {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            flex-wrap: wrap !important;
+
+            .btn {
+                height: 32px !important;
+                padding: 4px 12px !important;
+                font-size: 13px !important;
+                font-weight: 500 !important;
+                border-radius: 6px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin: 0 !important;
+            }
+        }
+
+        /* Flechas Chevron Interconectadas de Flujo de Trabajo (Workflow Effect) */
+        .o_field_statusbar > .o_statusbar_status {
+            --o-statusbar-radius: 4px !important;
+            --o-statusbar-border: #ffffff !important;
+            --o-statusbar-background-active: #fe5031 !important;
+            --o-statusbar-border-active: #fe5031 !important;
+            --o-statusbar-background-hover: #fed7d2 !important;
+
+            .o_arrow_button {
+                font-size: 12.5px !important;
+                font-weight: 600 !important;
+                color: #475569 !important;
+                transition: all 0.15s ease !important;
+
+                /* Etapa Activa (Naranja Ejecutivo #fe5031) */
+                &.o_arrow_button_current,
+                &[aria-current="step"],
+                &.btn-primary,
+                &:not(.disabled):not(:disabled).active {
+                    background: linear-gradient(135deg, #fe5031 0%, #e03b1e 100%) !important;
+                    color: #ffffff !important;
+                    font-weight: 700 !important;
+                    z-index: 2 !important;
+
+                    &::before {
+                        background-color: #ffffff !important;
+                    }
+                }
+
+                /* Etapas Inactivas / Previas / Posteriores */
+                &:not(.o_arrow_button_current):not([aria-current="step"]):not(.btn-primary):not(.active) {
+                    background-color: #f1f5f9 !important;
+                    color: #64748b !important;
+
+                    &::before {
+                        background-color: #ffffff !important;
+                    }
+
+                    &:hover {
+                        background-color: #fff4f2 !important;
+                        color: #fe5031 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Pestañas (Tabs) Minimalistas con Línea de Acento Orange #fe5031 */
+    .o_notebook {
+        margin-top: 20px !important;
+
+        .nav-tabs {
+            background-color: transparent !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+            display: flex !important;
+            gap: 24px !important;
+            margin-bottom: 20px !important;
+            padding: 0 4px !important;
+
+            .nav-item {
+                .nav-link {
+                    border: none !important;
+                    background: transparent !important;
+                    color: #475569 !important;
+                    font-weight: 500 !important;
+                    font-size: 13.5px !important;
+                    padding: 8px 4px 10px 4px !important;
+                    position: relative !important;
+                    transition: color 0.15s ease !important;
+
+                    &:hover {
+                        color: #fe5031 !important;
+                    }
+
+                    &.active,
+                    &.show {
+                        color: #fe5031 !important;
+                        font-weight: 700 !important;
+                        background: transparent !important;
+                        box-shadow: none !important;
+
+                        &::after {
+                            content: '' !important;
+                            position: absolute !important;
+                            bottom: -1px !important;
+                            left: 0 !important;
+                            right: 0 !important;
+                            height: 2.5px !important;
+                            background-color: #fe5031 !important;
+                            border-radius: 4px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Título Limpio del Registro */
+    .oe_title,
+    .o_field_char[name="name"],
+    [name="name"] {
+        margin-bottom: 8px !important;
+
+        h1 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        input,
+        .o_input {
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            color: #0f172a !important;
+            background-color: transparent !important;
+            border: none !important;
+            border-radius: 6px !important;
+            padding: 0 4px !important;
+            min-height: 0 !important;
+            height: 32px !important;
+            line-height: 32px !important;
+            box-shadow: none !important;
+
+            &:focus,
+            &:hover {
+                background-color: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+            }
+        }
+    }
+
+    /* ==========================================================================
+       CAMPOS BOOLEANOS (Switch Deslizable iOS Moderno con #fe5031)
+       ========================================================================== */
+    .o_field_boolean,
+    .o_boolean_toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        vertical-align: middle !important;
+        padding: 2px 0 !important;
+
+        .o-checkbox.form-check {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            margin: 0 !important;
+            padding-left: 0 !important;
+
+            .form-check-input {
+                width: 36px !important;
+                height: 20px !important;
+                min-width: 36px !important;
+                min-height: 20px !important;
+                background-color: #cbd5e1 !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") !important;
+                background-position: left center !important;
+                background-repeat: no-repeat !important;
+                border-radius: 20px !important;
+                border: none !important;
+                cursor: pointer !important;
+                margin: 0 !important;
+                transition: background-position 0.2s ease-in-out, background-color 0.2s ease-in-out !important;
+
+                &:checked {
+                    background-color: #fe5031 !important;
+                    background-position: right center !important;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") !important;
+                }
+
+                &:focus {
+                    box-shadow: 0 0 0 2px rgba(254, 80, 49, 0.18) !important;
+                }
+
+                &:disabled {
+                    opacity: 0.65 !important;
+                    cursor: not-allowed !important;
+                }
+            }
+
+            .form-check-label {
+                font-size: 13px !important;
+                font-weight: 500 !important;
+                color: #475569 !important;
+                cursor: pointer !important;
+                margin: 0 !important;
+            }
+        }
+    }
+
+    /* Etiquetas de Formulario (Labels) con Asterisco Naranja y Tooltip con Separación */
+    .o_form_label {
+        color: #334155 !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        margin-bottom: 4px !important;
+
+        &.o_required_modifier::after,
+        &.o_field_required::after {
+            content: ' *' !important;
+            color: #fe5031 !important;
+            font-weight: 700 !important;
+        }
+
+        .fa-question-circle,
+        .oi-help,
+        sup {
+            margin-left: 4px !important;
+            margin-right: 6px !important;
+            color: #38bdf8 !important;
+            font-size: 11.5px !important;
+        }
+    }
+
+    /* ==========================================================================
+       TODOS LOS CAMPOS DE ENTRADA, SELECTS Y DROPDOWNS (Estilo Cápsula #f8fafc)
+       ========================================================================== */
+    .o_field_widget:not(.o_field_many2many_tags):not(.o_field_boolean):not(.o_field_radio) input,
+    .o_field_widget:not(.o_field_many2many_tags):not(.o_field_boolean):not(.o_field_radio) select,
+    .o_field_many2one input,
+    .o_field_many2one_selection input,
+    .o_field_many2one_avatar input,
+    .o_field_partner_autocomplete input,
+    .o_field_char input,
+    .o_field_float input,
+    .o_field_integer input,
+    .o_field_datetime input,
+    .o_field_date input,
+    .o_field_monetary .o_input,
+    .o-autocomplete--input,
+    .o_input:not([name="name"]):not(textarea),
+    select.o_input {
+        background-color: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        padding: 6px 12px !important;
+        min-height: 36px !important;
+        height: 36px !important;
+        font-size: 13px !important;
+        color: #0f172a !important;
+        transition: all 0.15s ease !important;
+        box-shadow: none !important;
+
+        &:focus {
+            background-color: #ffffff !important;
+            border-color: #fe5031 !important;
+            box-shadow: 0 0 0 2px rgba(254, 80, 49, 0.15) !important;
+            outline: none !important;
+        }
+
+        &::placeholder {
+            color: #94a3b8 !important;
+            font-weight: 400 !important;
+        }
+    }
+
+    /* Text inputs NO deben tener background-image directa */
+    input.o_input,
+    input.o-autocomplete--input,
+    .o_field_many2one input,
+    .o_field_many2one_selection input,
+    .o_field_many2one_avatar input,
+    .o_field_partner_autocomplete input {
+        background-image: none !important;
+    }
+
+    /* SUSTITUIR EL TRIÁNGULO AZUL FEO DE ODOO POR EL CHEVRON GRIS ELEGANTE */
+    .o_input_dropdown,
+    .o_datepicker,
+    .o_field_many2one_selection {
+        position: relative !important;
+
+        .o_dropdown_button,
+        .o_datepicker_button {
+            position: absolute !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            right: 8px !important;
+            margin: auto 0 !important;
+            height: 100% !important;
+            width: 24px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            pointer-events: none !important;
+
+            &:after {
+                content: "" !important;
+                display: block !important;
+                width: 12px !important;
+                height: 12px !important;
+                border: none !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+                background-repeat: no-repeat !important;
+                background-position: center !important;
+                background-size: 11px 11px !important;
+                margin: 0 !important;
+            }
+        }
+    }
+
+    /* Selects nativos: Misma flecha chevron gris elegante */
+    .o_field_selection select,
+    select.o_input {
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+        background-position: right 12px center !important;
+        background-repeat: no-repeat !important;
+        background-size: 11px 11px !important;
+        padding-right: 32px !important;
+    }
+
+    /* Botón de enlace externo (flechita ->) con estilo moderno */
+    .o_field_many2one_selection .o_external_button,
+    .o_external_button {
+        color: #94a3b8 !important;
+        transition: color 0.15s ease, transform 0.15s ease !important;
+
+        &:hover {
+            color: #fe5031 !important;
+            transform: translateX(1px) !important;
+        }
+    }
+
+    /* Campos de Moneda */
+    .o_field_monetary {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+
+        .input-group-text {
+            background-color: #f8fafc !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 8px !important;
+            color: #475569 !important;
+            font-weight: 600 !important;
+            font-size: 13px !important;
+            padding: 6px 12px !important;
+            height: 36px !important;
+        }
+
+        .o_input {
+            font-weight: 600 !important;
+        }
+    }
+
+    /* Selector de Tipo en Cápsula Segmentada */
+    .o_field_radio {
+        div[role="radiogroup"] {
+            display: inline-flex !important;
+            background-color: #f1f5f9 !important;
+            padding: 3px !important;
+            border-radius: 8px !important;
+            border: 1px solid #e2e8f0 !important;
+            gap: 2px !important;
+            align-items: center !important;
+
+            .form-check.o_radio_item {
+                display: inline-flex !important;
+                align-items: center !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                position: relative !important;
+
+                input.o_radio_input {
+                    position: absolute !important;
+                    opacity: 0 !important;
+                    width: 0 !important;
+                    height: 0 !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    border: none !important;
+                    pointer-events: none !important;
+                }
+
+                label.form-check-label {
+                    padding: 5px 14px !important;
+                    border-radius: 6px !important;
+                    font-size: 12.5px !important;
+                    font-weight: 500 !important;
+                    color: #475569 !important;
+                    cursor: pointer !important;
+                    transition: all 0.16s ease !important;
+                    user-select: none !important;
+                    margin: 0 !important;
+                }
+
+                input.o_radio_input:checked + label.form-check-label {
+                    background-color: #ffffff !important;
+                    color: #fe5031 !important;
+                    font-weight: 700 !important;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+                }
+            }
+        }
+    }
+
+    /* Área de Texto y Notas Internas (Un solo marco limpio, sin doble borde) */
+    .o_field_text,
+    .o_field_html {
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+
+        textarea,
+        textarea.o_input,
+        .odoo-editor-editable {
+            background-color: #f8fafc !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 10px !important;
+            padding: 10px 14px !important;
+            min-height: 85px !important;
+            font-size: 13px !important;
+            color: #0f172a !important;
+            line-height: 1.5 !important;
+            width: 100% !important;
+            transition: all 0.15s ease !important;
+
+            &:focus {
+                background-color: #ffffff !important;
+                border-color: #fe5031 !important;
+                box-shadow: 0 0 0 2px rgba(254, 80, 49, 0.15) !important;
+                outline: none !important;
+            }
+
+            &::placeholder {
+                color: #94a3b8 !important;
+                font-weight: 400 !important;
+            }
+        }
+    }
+
+    /* Estrella de Favorito / Prioridad */
+    .o_priority_star,
+    .fa-star-o,
+    .fa-star {
+        color: #f59e0b !important;
+    }
+
+    /* Separadores de sección */
+    .o_horizontal_separator {
+        color: #64748b !important;
+        font-size: 11.5px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.6px !important;
+        text-transform: uppercase !important;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        margin-top: 24px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* ==========================================================================
+   TAGS & BOTÓN "+ AÑADIR" CON BORDE PUNTEADO ORANGE #fe5031
+   ========================================================================== */
+.o_field_tags.o_tags_input {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+
+    .badge,
+    .o_tag {
+        background-color: #f1f5f9 !important;
+        color: #0f172a !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+        padding: 4px 8px !important;
+        font-weight: 600 !important;
+        font-size: 12px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+
+        .o_delete,
+        .oi-close {
+            color: #64748b !important;
+            margin-left: 4px !important;
+            font-size: 11px !important;
+            transition: color 0.12s ease !important;
+
+            &:hover {
+                color: #fe5031 !important;
+            }
+        }
+    }
+
+    .o_field_many2many_selection {
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+
+        .o-autocomplete {
+            display: inline-flex !important;
+            align-items: center !important;
+            position: relative !important;
+
+            &::before {
+                content: '+ Añadir' !important;
+                position: absolute !important;
+                left: 0 !important;
+                right: 0 !important;
+                top: 0 !important;
+                bottom: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                color: #fe5031 !important;
+                font-size: 11.5px !important;
+                font-weight: 600 !important;
+                pointer-events: none !important;
+                z-index: 1 !important;
+                transition: opacity 0.15s ease !important;
+            }
+
+            &:focus-within::before {
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+
+            .o-autocomplete--input {
+                border: 1.5px dashed #fe5031 !important;
+                background-color: #fff4f2 !important;
+                color: #fe5031 !important;
+                border-radius: 6px !important;
+                font-weight: 600 !important;
+                font-size: 12px !important;
+                padding: 3px 10px !important;
+                height: 26px !important;
+                min-height: 26px !important;
+                width: 78px !important;
+                text-align: center !important;
+                cursor: pointer !important;
+                transition: all 0.15s ease !important;
+
+                &::placeholder {
+                    color: transparent !important;
+                }
+
+                &:hover {
+                    background-color: #fed7d2 !important;
+                    border-color: #e03b1e !important;
+                }
+
+                &:focus {
+                    width: 140px !important;
+                    background-color: #ffffff !important;
+                    border-style: solid !important;
+                    border-color: #fe5031 !important;
+                    color: #0f172a !important;
+                    text-align: left !important;
+                    box-shadow: 0 0 0 2px rgba(254, 80, 49, 0.18) !important;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   CHATTER TOPBAR
+   ========================================================================== */
+.o-mail-Chatter {
+    padding-top: 16px !important;
+    background-color: #f8fafc !important;
+    overflow-x: hidden !important;
+
+    .o-mail-Chatter-top {
+        padding: 0 16px !important;
+        margin-top: 0 !important;
+        overflow-x: hidden !important;
+
+        .o-mail-Chatter-topbar {
+            height: 46px !important;
+            min-height: 46px !important;
+            display: flex !important;
+            align-items: center !important;
+            margin-top: 0 !important;
+            margin-bottom: 14px !important;
+            overflow-x: hidden !important;
+
+            .btn {
+                height: 32px !important;
+                padding: 4px 12px !important;
+                font-size: 13px !important;
+                font-weight: 500 !important;
+                border-radius: 6px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                margin-right: 6px !important;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   IMAGE BOX (Marco de foto estilo Upload con borde punteado)
+   ========================================================================== */
+.o_field_image {
+    .d-inline-block.position-relative {
+        border-radius: 12px !important;
+        border: 1.5px dashed #cbd5e1 !important;
+        background-color: #f8fafc !important;
+        padding: 8px !important;
+        transition: all 0.2s ease !important;
+
+        &:hover {
+            border-color: #fe5031 !important;
+            background-color: #fff4f2 !important;
+            box-shadow: 0 4px 12px rgba(254, 80, 49, 0.12) !important;
+        }
+
+        img {
+            border-radius: 8px !important;
+        }
+
+        .o_form_image_controls {
+            background: rgba(15, 23, 42, 0.8) !important;
+            border-radius: 0 0 8px 8px !important;
+            backdrop-filter: blur(4px) !important;
+
+            button {
+                color: #ffffff !important;
+                &:hover {
+                    color: #fed7d2 !important;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   KANBAN CARDS & DASHBOARDS
+   ========================================================================== */
+.o_kanban_view {
+    background-color: #f8fafc !important;
+    padding: 16px !important;
+
+    .o_kanban_ghost,
+    .o_kanban_record.o_kanban_ghost {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
+        box-shadow: none !important;
+        pointer-events: none !important;
+    }
+
+    .o_kanban_record:not(.o_kanban_ghost),
+    .o_kanban_card:not(.o_kanban_ghost),
+    .card:not(.o_kanban_ghost) {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 16px 18px !important;
+        margin-bottom: 16px !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+        transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+
+        &:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.09), 0 4px 8px -2px rgba(0, 0, 0, 0.04) !important;
+            border-color: #cbd5e1 !important;
+        }
+
+        a.fs-4.fw-bold,
+        .o_kanban_record_title {
+            color: #0f172a !important;
+            font-weight: 700 !important;
+            font-size: 16px !important;
+            text-decoration: none !important;
+            transition: color 0.15s ease !important;
+
+            &:hover {
+                color: #fe5031 !important;
+            }
+        }
+
+        .text-muted.small {
+            color: #64748b !important;
+            font-size: 12.5px !important;
+            line-height: 1.4 !important;
+        }
+
+        [name="kanban_primary_right"] a {
+            color: #475569 !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            padding: 3px 6px !important;
+            border-radius: 6px !important;
+            display: inline-block !important;
+            transition: all 0.15s ease !important;
+
+            &:hover {
+                color: #fe5031 !important;
+                background-color: #fff4f2 !important;
+            }
+        }
+
+        .btn-primary {
+            border-radius: 8px !important;
+            padding: 6px 16px !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+        }
+
+        .o_dashboard_graph {
+            margin-top: 12px !important;
+            border-top: 1px solid #f1f5f9 !important;
+            padding-top: 8px !important;
+        }
+    }
+}
+
+/* ==========================================================================
+   PAGER (Paginador: 1-8 / 8 y botones < > estilo tarjeta suave)
+   ========================================================================== */
+.o_pager {
+    align-items: center !important;
+    gap: 4px !important;
+
+    .o_pager_counter {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #334155 !important;
+        margin-right: 6px !important;
+
+        .o_pager_value {
+            color: #fe5031 !important;
+            font-weight: 700 !important;
+            padding: 0 2px !important;
+        }
+
+        .o_pager_limit {
+            color: #475569 !important;
+            font-weight: 600 !important;
+        }
+    }
+
+    .o_pager_previous,
+    .o_pager_next {
+        background-color: #cbd5e1 !important;
+        color: #334155 !important;
+        border: none !important;
+        border-radius: 6px !important;
+        width: 32px !important;
+        height: 32px !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        transition: all 0.15s ease-in-out !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+
+        &:hover:not(:disabled) {
+            background-color: #94a3b8 !important;
+            color: #0f172a !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12) !important;
+        }
+
+        &:active:not(:disabled) {
+            background-color: #64748b !important;
+            color: #ffffff !important;
+            transform: translateY(0) !important;
+        }
+
+        &:disabled {
+            opacity: 0.45 !important;
+            background-color: #e2e8f0 !important;
+            cursor: not-allowed !important;
+        }
+    }
+}
+
+/* ==========================================================================
+   VIEW SWITCHER (Botones de Vistas: Lista, Kanban, Pivot, etc.)
+   ========================================================================== */
+.o_cp_switch_buttons {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+
+    button.o_switch_view {
+        background-color: #5c667a !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        width: 34px !important;
+        height: 34px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+        transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+        i, span, .oi, .fa {
+            color: #ffffff !important;
+            font-size: 15px !important;
+            line-height: 1 !important;
+        }
+
+        &:hover {
+            background-color: #475569 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        &.active {
+            background: linear-gradient(135deg, #df2673 0%, #fe5031 100%) !important;
+            box-shadow: 0 2px 8px rgba(254, 80, 49, 0.4) !important;
+            transform: scale(1.02) !important;
+        }
+    }
+}
+
+/* Search view facets & input */
+.o_searchview {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 3px 8px !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+
+    &:focus-within {
+        border-color: #fe5031 !important;
+        box-shadow: 0 0 0 3px rgba(254, 80, 49, 0.15) !important;
+    }
+
+    .o_searchview_facet {
+        background-color: #f1f5f9 !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+        padding: 2px 6px !important;
+        margin: 2px 4px 2px 0 !important;
+
+        .o_searchview_facet_label {
+            background-color: #fe5031 !important;
+            color: #ffffff !important;
+            border-radius: 4px !important;
+            padding: 1px 6px !important;
+            font-weight: 600 !important;
+        }
+    }
+}

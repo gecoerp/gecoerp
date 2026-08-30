@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="geco_whatsapp.QrDialog">
+        <Dialog title="'Vincular WhatsApp'" size="'sm'">
+            <div class="geco-wa-qr-body">
+                <t t-if="state.status === 'starting'">
+                    <div class="geco-wa-qr-state">
+                        <i class="fa fa-spinner fa-spin geco-wa-qr-icon text-primary"/>
+                        <span>Iniciando motor de sesión...</span>
+                    </div>
+                </t>
+                <t t-elif="state.status === 'qr' and state.qrCode">
+                    <p class="text-muted small px-2 text-center">
+                        Escanea este código QR desde tu teléfono para vincular WhatsApp.
+                    </p>
+                    <div class="geco-wa-qr-image-wrap">
+                        <img t-att-src="state.qrCode" alt="QR Code" class="geco-wa-qr-image"/>
+                    </div>
+                    <p class="text-muted geco-wa-qr-hint text-center">
+                        WhatsApp &gt; Ajustes &gt; Dispositivos vinculados &gt; Vincular dispositivo
+                    </p>
+                </t>
+                <t t-elif="state.status === 'connected'">
+                    <div class="geco-wa-qr-state">
+                        <i class="fa fa-check-circle geco-wa-qr-icon text-success"/>
+                        <h5 class="text-success mb-0">¡Dispositivo Conectado!</h5>
+                        <span class="text-muted small" t-if="state.phone"><t t-esc="state.phone"/></span>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="geco-wa-qr-state">
+                        <i class="fa fa-exclamation-triangle geco-wa-qr-icon text-danger"/>
+                        <span class="text-center">
+                            No se pudo obtener el código QR. Verifica que el microservicio esté corriendo.
+                        </span>
+                    </div>
+                </t>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-secondary" t-on-click="() => this.props.close()">Cerrar</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

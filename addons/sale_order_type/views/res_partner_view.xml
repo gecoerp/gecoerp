@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_property_form_inherit_sale_type" model="ir.ui.view">
+        <field name="name">res.partner.sale.property.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale']" position="inside">
+                <field name="sale_type" options="{'no_create': True}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

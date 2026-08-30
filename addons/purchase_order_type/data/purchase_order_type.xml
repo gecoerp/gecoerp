@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+    <!-- Secuencias independientes por tipo de orden de compra -->
+    <record id="seq_po_type_regular" model="ir.sequence">
+        <field name="name">Compras Regulares</field>
+        <field name="code">purchase.order.type.regular</field>
+        <field name="prefix">OC-REG/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_po_type_blanket" model="ir.sequence">
+        <field name="name">Pedidos Abiertos (Blanket)</field>
+        <field name="code">purchase.order.type.blanket</field>
+        <field name="prefix">OC-BLK/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_po_type_contract" model="ir.sequence">
+        <field name="name">Contratos de Compra</field>
+        <field name="code">purchase.order.type.contract</field>
+        <field name="prefix">OC-CTR/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_po_type_planned_month" model="ir.sequence">
+        <field name="name">Planeadas Mensual</field>
+        <field name="code">purchase.order.type.planned.month</field>
+        <field name="prefix">OC-MEN/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_po_type_planned_year" model="ir.sequence">
+        <field name="name">Planeadas Anuales</field>
+        <field name="code">purchase.order.type.planned.year</field>
+        <field name="prefix">OC-ANU/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_po_type_assets" model="ir.sequence">
+        <field name="name">Activos Fijos / Equipo</field>
+        <field name="code">purchase.order.type.assets</field>
+        <field name="prefix">OC-ACT/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_po_type_maintenance" model="ir.sequence">
+        <field name="name">Mantenimiento y Reparaciones</field>
+        <field name="code">purchase.order.type.maintenance</field>
+        <field name="prefix">OC-MTO/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_po_type_travel" model="ir.sequence">
+        <field name="name">Viáticos y Gastos de Viaje</field>
+        <field name="code">purchase.order.type.travel</field>
+        <field name="prefix">OC-VIA/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <!-- Tipos de orden de compra -->
+    <record model="purchase.order.type" id="po_type_regular">
+        <field name="name">Regular</field>
+        <field name="sequence">5</field>
+        <field name="sequence_id" ref="seq_po_type_regular" />
+        <field name="description">Papel bond, tóner para impresoras, bolígrafos, café/azúcar de oficina, consumibles de almacén, empaques, refacciones menores y reposición ordinaria de inventario.</field>
+    </record>
+
+    <record model="purchase.order.type" id="po_type_blanket">
+        <field name="name">Blanket</field>
+        <field name="sequence">10</field>
+        <field name="sequence_id" ref="seq_po_type_blanket" />
+        <field name="description">Convenios con proveedores donde se pacta un precio y volumen global para surtirse en entregas parciales.</field>
+    </record>
+
+    <record model="purchase.order.type" id="po_type_contract">
+        <field name="name">Contract</field>
+        <field name="sequence">15</field>
+        <field name="sequence_id" ref="seq_po_type_contract" />
+        <field name="description">Adquisición de obra, proyectos de ingeniería o contratos con cláusulas legales específicas.</field>
+    </record>
+
+    <record model="purchase.order.type" id="po_type_planned">
+        <field name="name">Planeadas Mensual</field>
+        <field name="sequence">20</field>
+        <field name="sequence_id" ref="seq_po_type_planned_month" />
+        <field name="is_periodic">True</field>
+        <field name="billing_period_value">1</field>
+        <field name="billing_period_unit">month</field>
+        <field name="billing_first_day">True</field>
+        <field name="provision_day_of_month">5</field>
+        <field name="cash_flow_impact">True</field>
+        <field name="description">Luz (CFE), Teléfono / Internet (Telmex, Totalplay), Agua, Renta de oficinas/bodegas, Honorarios contables externos, sistemas mensuales.</field>
+    </record>
+
+    <record model="purchase.order.type" id="po_type_planned_annual">
+        <field name="name">Planeadas Anuales</field>
+        <field name="sequence">25</field>
+        <field name="sequence_id" ref="seq_po_type_planned_year" />
+        <field name="is_periodic">True</field>
+        <field name="billing_period_value">1</field>
+        <field name="billing_period_unit">year</field>
+        <field name="billing_first_day">True</field>
+        <field name="provision_day_of_month">1</field>
+        <field name="cash_flow_impact">True</field>
+        <field name="description">Seguro de vehículos / flotilla, pólizas de seguro de inmueble / responsabilidad civil, refrendos vehiculares, licencias anuales de software, cuotas patronales/cámaras.</field>
+    </record>
+
+    <record model="purchase.order.type" id="po_type_assets">
+        <field name="name">Activos Fijos / Equipo</field>
+        <field name="sequence">30</field>
+        <field name="sequence_id" ref="seq_po_type_assets" />
+        <field name="description">Para compra de computadoras, servidores, maquinaria, mobiliario de oficina, vehículos. (Permite separar las inversiones de capital del gasto corriente).</field>
+    </record>
+
+    <record model="purchase.order.type" id="po_type_maintenance">
+        <field name="name">Mantenimiento y Reparaciones</field>
+        <field name="sequence">35</field>
+        <field name="sequence_id" ref="seq_po_type_maintenance" />
+        <field name="description">Mantenimiento preventivo/correctivo de vehículos, maquinaria, instalaciones eléctricas y climas.</field>
+    </record>
+
+    <record model="purchase.order.type" id="po_type_travel">
+        <field name="name">Viáticos y Gastos de Viaje</field>
+        <field name="sequence">40</field>
+        <field name="sequence_id" ref="seq_po_type_travel" />
+        <field name="description">Gasolina, casetas, hospedajes y alimentos de personal en ruta.</field>
+    </record>
+</odoo>

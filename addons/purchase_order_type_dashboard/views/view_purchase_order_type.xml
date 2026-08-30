@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_purchase_order_type_tree" model="ir.ui.view">
+        <field
+            name="name"
+        >purchase.order.type.tree (in purchase_order_type_dashboard)</field>
+        <field name="model">purchase.order.type</field>
+        <field
+            name="inherit_id"
+            ref="purchase_order_type.view_purchase_order_type_tree"
+        />
+        <field name="arch" type="xml">
+            <field name="description" position="after">
+                <field name="state_rfq_po_count" sum="Total RFQs" />
+                <field name="invoice_status_no_po_count" sum="Total Nothing to Bill" />
+                <field name="invoice_status_ti_po_count" sum="Total Waiting Bills" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_type_form" model="ir.ui.view">
+        <field
+            name="name"
+        >purchase.order.type.form (in purchase_order_type_dashboard)</field>
+        <field name="model">purchase.order.type</field>
+        <field
+            name="inherit_id"
+            ref="purchase_order_type.view_purchase_order_type_form"
+        />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    class="oe_stat_button"
+                    name="%(action_purchase_rfq_from_dashboard)d"
+                    type="action"
+                    icon="fa-shopping-cart"
+                    context="{'search_default_draft': 1}"
+                >
+                    <field name="state_rfq_po_count" widget="statinfo" />
+                </button>
+                <button
+                    class="oe_stat_button"
+                    name="%(action_purchase_order_from_dashboard)d"
+                    type="action"
+                    icon="fa-truck"
+                    context="{'search_default_invoice_status_no': 1}"
+                >
+                    <field name="invoice_status_no_po_count" widget="statinfo" />
+                </button>
+                <button
+                    class="oe_stat_button"
+                    name="%(action_purchase_order_from_dashboard)d"
+                    type="action"
+                    icon="fa-usd"
+                    context="{'search_default_not_invoiced': 1}"
+                >
+                    <field name="invoice_status_ti_po_count" widget="statinfo" />
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_type_kanban" model="ir.ui.view">
+        <field
+            name="name"
+        >purchase.order.type.kanban (in purchase_order_type_dashboard)</field>
+        <field name="model">purchase.order.type</field>
+        <field name="arch" type="xml">
+            <kanban class="o_account_kanban o_purchase_dashboard_kanban" create="0" highlight_color="color">
+                <field name="id" />
+                <field name="name" />
+                <field name="color" />
+                <field name="description" />
+                <field name="is_periodic" />
+                <field name="billing_period_value" />
+                <field name="billing_period_unit" />
+                <field name="billing_period_display" />
+                <field name="provision_day_of_month" />
+                <field name="estimated_periodic_amount" />
+                <field name="mrr_amount" />
+                <field name="cash_flow_impact" />
+                <field name="has_po_entries" />
+                <field name="state_rfq_po_count" />
+                <field name="invoice_status_no_po_count" />
+                <field name="invoice_status_ti_po_count" />
+                <field name="kanban_dashboard_graph" />
+                <templates>
+                    <t t-name="card">
+                        <!-- Top header -->
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                            <a class="fs-4 fw-bold" name="%(action_purchase_rfq_from_dashboard)d" type="action">
+                                <field name="name"/>
+                            </a>
+                            <span class="badge rounded-pill bg-primary-subtle text-primary border border-primary-subtle" t-if="record.is_periodic.raw_value">
+                                <i class="fa fa-repeat me-1"/> <field name="billing_period_display"/>
+                            </span>
+                        </div>
+                        <div class="d-flex flex-row align-items-center flex-wrap gap-2 mt-1" t-if="record.is_periodic.raw_value and record.estimated_periodic_amount.raw_value">
+                            <span class="badge bg-light text-dark border">
+                                <i class="fa fa-calculator text-primary me-1"/> Provisión: <field name="estimated_periodic_amount"/>
+                            </span>
+                            <span class="badge bg-light text-dark border" t-if="record.mrr_amount.raw_value and record.billing_period_unit.raw_value != 'month'">
+                                <i class="fa fa-line-chart text-info me-1"/> MRR: <field name="mrr_amount"/>/mes
+                            </span>
+                            <span class="badge bg-light text-dark border" t-if="record.provision_day_of_month.raw_value">
+                                <i class="fa fa-calendar text-success me-1"/> Corte: Día <field name="provision_day_of_month"/>
+                            </span>
+                        </div>
+                        <div class="text-muted small mt-1 lh-sm" t-if="record.description.value">
+                            <field name="description"/>
+                        </div>
+                        <div class="text-muted small mt-1 lh-sm" t-else="">
+                            Solicitudes de presupuesto y compras
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="mt-3 p-0 container-fluid">
+                            <div class="row align-items-center mb-2">
+                                <div class="col mb-3 mb-sm-0 o_kanban_primary_left">
+                                    <button class="btn btn-primary" type="object" name="action_create_rfq">
+                                        Nuevo
+                                    </button>
+                                </div>
+                                <div class="col-auto text-end" name="kanban_primary_right">
+                                    <div class="row">
+                                        <div class="col overflow-hidden text-start">
+                                            <a name="%(action_purchase_rfq_from_dashboard)d" type="action" context="{'search_default_draft': 1}">
+                                                <t t-out="record.state_rfq_po_count.value"/> Sol. de presupuesto
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col overflow-hidden text-start">
+                                            <a name="%(action_purchase_order_from_dashboard)d" type="action" context="{'search_default_not_invoiced': 1}">
+                                                <t t-out="record.invoice_status_ti_po_count.value"/> Esperando facturas
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col overflow-hidden text-start">
+                                            <a name="%(action_purchase_order_from_dashboard)d" type="action" context="{'search_default_invoice_status_no': 1}">
+                                                <t t-out="record.invoice_status_no_po_count.value"/> Nada para facturar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bottom Graph (Bar Chart) -->
+                            <div class="row mt-auto">
+                                <field name="kanban_dashboard_graph" graph_type="bar" widget="dashboard_graph"/>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="menu">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <h5 class="o_kanban_card_manage_title">
+                                        <span>Ver</span>
+                                    </h5>
+                                    <div>
+                                        <a name="%(action_purchase_rfq_from_dashboard)d" type="action">
+                                            Presupuestos
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a name="%(action_purchase_order_from_dashboard)d" type="action">
+                                            Órdenes de compra
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <h5 class="o_kanban_card_manage_title">
+                                        <span>Nuevo</span>
+                                    </h5>
+                                    <div>
+                                        <a type="object" name="action_create_rfq">
+                                            Presupuesto
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <h5 class="o_kanban_card_manage_title">
+                                        <span>Informes</span>
+                                    </h5>
+                                    <div>
+                                        <a name="%(action_purchase_order_report_from_dashboard)d" type="action">
+                                            Análisis de compras
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_kanban_card_manage_settings row mt-2 pt-2 border-top">
+                                <field class="col-8" name="color" widget="kanban_color_picker"/>
+                                <div class="col-4 text-end">
+                                    <a class="dropdown-item" type="edit">Configuración</a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

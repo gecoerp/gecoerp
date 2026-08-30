@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase_order_inherit_form_purchase_receipt_by_date" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.multi.warehouse</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='products']/field[@name='order_line']/list/field[@name='name']" position="after">
+                <field name="picking_type_id" optional="show" options="{'no_create': True}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

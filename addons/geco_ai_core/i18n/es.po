@@ -1,0 +1,453 @@
+# Translation of Gecoerp Server.
+# This file contains the translation of the following modules:
+# 	* geco_ai_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gecoerp Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 08:05+0000\n"
+"PO-Revision-Date: 2026-07-01 08:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "0 = Ilimitado. Se enviará una alerta al alcanzar el 90%."
+msgstr ""
+
+#. module: geco_ai_core
+#: model:mail.template,body_html:geco_ai_core.email_template_geco_ai_token_alert
+msgid ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Hola Administrador,<br/><br/>\n"
+"        El sistema <strong>GECO AI</strong> ha detectado que el consumo de tokens de Inteligencia Artificial está a punto de alcanzar o superar el límite establecido.\n"
+"    </p>\n"
+"    <br/>\n"
+"    <ul>\n"
+"        <li><strong>Límite Configurado:</strong> <t t-out=\"ctx.get('token_limit') or 0\"/> tokens mensuales</li>\n"
+"        <li><strong>Consumo Actual:</strong> <t t-out=\"ctx.get('current_tokens') or 0\"/> tokens</li>\n"
+"        <li><strong>Porcentaje de Uso:</strong> <t t-out=\"ctx.get('usage_percent') or 0\"/>%</li>\n"
+"    </ul>\n"
+"    <br/>\n"
+"    <p>Por favor, ajusta tu presupuesto en el módulo Ajustes &gt; GECO AI para evitar interrupciones en el servicio.</p>\n"
+"    <br/>\n"
+"    <p>Saludos,<br/>Tu GECO AI Master Engine</p>\n"
+"</div>\n"
+"            "
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.actions.act_window,name:geco_ai_core.action_geco_ai_log
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_tree
+msgid "AI Consumption Logs"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_form
+msgid "AI Log Detail"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__model_used
+msgid "AI Model"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_graph
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_pivot
+msgid "AI Token Consumption"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:mail.template,subject:geco_ai_core.email_template_geco_ai_token_alert
+msgid ""
+"ALERTA GECO AI: Consumo de tokens cercano al límite ({{ "
+"object.company_id.name }})"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__geco_ai_alert_email
+msgid "Alert Email"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__module_caller
+msgid "Calling Module"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__tokens_completion
+msgid "Completion Tokens"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model,name:geco_ai_core.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "Configura los proveedores de IA para GECOERP"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "Consumo Mes Actual"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "Consumo por Módulo"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.ui.menu,name:geco_ai_core.menu_geco_ai_logs
+msgid "Consumption Logs"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__cost_mxn
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_form
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_tree
+msgid "Costo (MXN)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__geco_ai_cost_input_1m
+msgid "Costo 1M Tokens (Entrada - USD)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__geco_ai_cost_output_1m
+msgid "Costo 1M Tokens (Salida - USD)"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "Costo Estimado Mes"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,help:geco_ai_core.field_res_config_settings__geco_ai_cost_input_1m
+msgid "Costo en USD por 1 Millón de tokens de entrada (Prompt)."
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,help:geco_ai_core.field_res_config_settings__geco_ai_cost_output_1m
+msgid "Costo en USD por 1 Millón de tokens de salida (Respuesta)."
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "Costo en USD por cada 1 Millón de tokens (Prompt y Completado)."
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.ui.menu,name:geco_ai_core.menu_geco_ai_dashboard
+msgid "Dashboard"
+msgstr "Tablero"
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_tree
+msgid "Date"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__geco_ai_provider
+msgid "Default AI Provider"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_core__display_name
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_dashboard__display_name
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__display_name
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,help:geco_ai_core.field_res_config_settings__geco_ai_alert_email
+msgid "Email address to send token limit alerts."
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__cost_estimate
+msgid "Est. Cost (USD)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.ui.menu,name:geco_ai_core.menu_geco_ai_root
+msgid "GECO AI"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+#: model:ir.actions.client,name:geco_ai_core.action_geco_ai_dashboard
+msgid "GECO AI Analytics"
+msgstr "Analíticas de GECO AI"
+
+#. module: geco_ai_core
+#: model:ir.model,name:geco_ai_core.model_geco_ai_log
+msgid "GECO AI Audit Log"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model,name:geco_ai_core.model_geco_ai_dashboard
+msgid "GECO AI Dashboard Backend"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "GECO AI Engine"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model,name:geco_ai_core.model_geco_ai_core
+msgid "GECO AI Master Engine"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:mail.template,name:geco_ai_core.email_template_geco_ai_token_alert
+msgid "GECO AI: Alerta de Límite de Tokens"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields.selection,name:geco_ai_core.selection__geco_ai_log__provider__gemini
+msgid "Gemini"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__geco_gemini_api_key
+msgid "Gemini API Key"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-python
+#: code:addons/geco_ai_core/models/geco_ai_engine.py:0
+msgid "Gemini API Key is missing. Configure it in GECO AI Engine settings."
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-python
+#: code:addons/geco_ai_core/models/geco_ai_engine.py:0
+msgid "Gemini Connection Error: %s"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields.selection,name:geco_ai_core.selection__res_config_settings__geco_ai_provider__gemini
+msgid "Google Gemini"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_core__id
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_dashboard__id
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__id
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "Límites de uso y alertas por correo"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__geco_ai_token_limit
+msgid "Monthly Token Limit"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "Motor de Inteligencia Artificial"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields.selection,name:geco_ai_core.selection__geco_ai_log__provider__openai
+msgid "OpenAI"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields.selection,name:geco_ai_core.selection__res_config_settings__geco_ai_provider__openai
+msgid "OpenAI (ChatGPT)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_res_config_settings__geco_openai_api_key
+msgid "OpenAI API Key"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-python
+#: code:addons/geco_ai_core/models/geco_ai_engine.py:0
+msgid "OpenAI API Key is missing. Configure it in GECO AI Engine settings."
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-python
+#: code:addons/geco_ai_core/models/geco_ai_engine.py:0
+msgid "OpenAI Connection Error: %s"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "Presupuesto y Alertas"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "Promedio Diario"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__prompt
+msgid "Prompt (Input)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_form
+msgid "Prompt (Sent to AI)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__tokens_prompt
+msgid "Prompt Tokens"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__provider
+msgid "Provider"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "Proyección MLP (Redes Neuronales)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__name
+msgid "Reference"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "Refrescar"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_form
+msgid "Response (From AI)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__response
+msgid "Response (Output)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,help:geco_ai_core.field_res_config_settings__geco_ai_token_limit
+msgid ""
+"Set to 0 for unlimited. An email will be sent when consumption reaches 90%."
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.ui.menu,name:geco_ai_core.menu_geco_ai_settings
+msgid "Settings"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "Tendencia de Uso (30 días)"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_form
+msgid "Token Details"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_tree
+msgid "Total MXN"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__tokens_total
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_tree
+msgid "Total Tokens"
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_tree
+msgid "Total USD"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.view_geco_ai_log_tree
+msgid "USD"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,field_description:geco_ai_core.field_geco_ai_log__user_id
+msgid "User"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,help:geco_ai_core.field_res_config_settings__geco_gemini_api_key
+msgid "Your secret API key from Google Generative AI (Gemini)."
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.model.fields,help:geco_ai_core.field_res_config_settings__geco_openai_api_key
+msgid "Your secret API key from OpenAI (ChatGPT). Starts with 'sk-...'."
+msgstr ""
+
+#. module: geco_ai_core
+#: model_terms:ir.ui.view,arch_db:geco_ai_core.res_config_settings_view_form_geco_ai_core
+msgid "admin@miempresa.com"
+msgstr ""
+
+#. module: geco_ai_core
+#. gecoerp-javascript
+#: code:addons/geco_ai_core/static/src/xml/dashboard_template.xml:0
+msgid "tokens"
+msgstr ""
+
+#. module: geco_ai_core
+#: model:ir.ui.menu,name:geco_ai_core.menu_geco_ai_test_wizard
+msgid "Verify Connection"
+msgstr "Verificar conexión"

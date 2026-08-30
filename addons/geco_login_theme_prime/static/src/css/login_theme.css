@@ -1,0 +1,410 @@
+/* ==========================================================================
+   GECO Official Brand Theme Stylesheet (Dark Tech & Gold/Blue Palette)
+   ========================================================================== */
+
+/* Odoo Frontend Layout Overrides for Login Page */
+body.o_connected_user .geco_login_page_container,
+body .geco_login_page_container {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #060913;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 82, 255, 0.35) 0%, rgba(6, 9, 19, 0) 50%),
+        radial-gradient(circle at 85% 80%, rgba(255, 176, 0, 0.25) 0%, rgba(6, 9, 19, 0) 45%),
+        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.6) 0%, rgba(6, 9, 19, 1) 100%);
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+    color: #f8fafc;
+}
+
+/* Hide default header/footer if present */
+body.geco_login_body header,
+body.geco_login_body footer {
+    display: none !important;
+}
+
+/* Main Split Wrapper */
+.geco_login_wrapper {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 90vh;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Left Hero Branding Section */
+.geco_login_hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 520px;
+    padding-right: 1.5rem;
+}
+
+.geco_hero_top {
+    margin-bottom: 2rem;
+}
+
+.geco_top_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1.1rem;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.geco_top_badge i {
+    color: #ffb800;
+}
+
+.geco_brand_logo_area {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.geco_brand_logo_img {
+    max-height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.geco_hero_headline {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.geco_hero_headline span.highlight {
+    color: #ffb800;
+    text-shadow: 0 0 25px rgba(255, 184, 0, 0.35);
+}
+
+.geco_hero_description {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin-bottom: 2.25rem;
+    max-width: 520px;
+}
+
+.geco_feature_pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.geco_pill_item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 1.15rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    transition: all 0.25 ease;
+}
+
+.geco_pill_item:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 184, 0, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.geco_pill_icon {
+    color: #3b82f6;
+    font-size: 0.95rem;
+}
+
+/* Right Side - Form Card Container */
+.geco_login_card_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.geco_login_card {
+    width: 100%;
+    max-width: 440px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(30px) saturate(190%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 2.5rem 2.25rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(0, 82, 255, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.geco_login_card:hover {
+    background: rgba(15, 23, 42, 0.82);
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.65),
+                0 0 40px rgba(255, 184, 0, 0.18),
+                inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.geco_card_header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.geco_card_title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.35rem;
+}
+
+.geco_card_subtitle {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Form Controls & Custom Input Group */
+.geco_field_group {
+    margin-bottom: 1.25rem;
+}
+
+.geco_label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    margin-bottom: 0.45rem;
+}
+
+.geco_input_relative {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.geco_input_icon {
+    position: absolute;
+    left: 14px;
+    color: #64748b;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+.geco_form_control {
+    width: 100%;
+    height: 48px;
+    padding: 0.5rem 1rem 0.5rem 42px;
+    font-size: 0.95rem;
+    color: #ffffff;
+    background-color: rgba(30, 41, 59, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.geco_form_control::placeholder {
+    color: #64748b;
+}
+
+.geco_form_control:focus {
+    background-color: rgba(30, 41, 59, 0.9);
+    border-color: #ffb800;
+    box-shadow: 0 0 0 4px rgba(255, 184, 0, 0.15);
+}
+
+.geco_form_control:focus + .geco_input_icon,
+.geco_input_relative:focus-within .geco_input_icon {
+    color: #ffb800;
+}
+
+/* Password Toggle Button */
+.geco_pwd_toggle_btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: color 0.2s ease;
+}
+
+.geco_pwd_toggle_btn:hover {
+    color: #ffb800;
+}
+
+/* Tip Box */
+.geco_tip_box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.825rem;
+    color: #94a3b8;
+    line-height: 1.45;
+}
+
+.geco_tip_icon {
+    color: #ffb800;
+    font-size: 1rem;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+.geco_tip_box strong {
+    color: #e2e8f0;
+}
+
+/* Submit Button */
+.geco_btn_submit {
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(135deg, #0052ff 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 82, 255, 0.35);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.geco_btn_submit:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    box-shadow: 0 6px 20px rgba(0, 82, 255, 0.5), 0 0 15px rgba(255, 184, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.geco_btn_submit:active {
+    transform: translateY(0);
+}
+
+/* Links & Extra Actions */
+.geco_card_links {
+    text-align: center;
+    margin-top: 1.25rem;
+}
+
+.geco_link {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.geco_link:hover {
+    color: #ffb800;
+    text-decoration: underline;
+}
+
+/* Security Badge Footer */
+.geco_bottom_badge {
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 9999px;
+    font-size: 0.775rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.geco_security_icon {
+    color: #10b981;
+    font-size: 0.85rem;
+}
+
+/* Database selector list custom styling */
+.geco_db_selector {
+    margin-bottom: 1.25rem;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .geco_login_wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2rem 1rem;
+    }
+    
+    .geco_login_hero {
+        min-height: auto;
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .geco_hero_headline {
+        font-size: 2.25rem;
+    }
+
+    .geco_feature_pills {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .geco_login_card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 18px;
+    }
+    
+    .geco_hero_headline {
+        font-size: 1.85rem;
+    }
+}

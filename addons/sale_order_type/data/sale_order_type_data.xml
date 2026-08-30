@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+    <record id="seq_sale_type_matriz" model="ir.sequence">
+        <field name="name">Ventas Sucursal Matriz</field>
+        <field name="code">sale.order.type.matriz</field>
+        <field name="prefix">COT-MAT/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_sale_type_norte" model="ir.sequence">
+        <field name="name">Ventas Sucursal Norte</field>
+        <field name="code">sale.order.type.norte</field>
+        <field name="prefix">COT-NOR/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_sale_type_mayoreo" model="ir.sequence">
+        <field name="name">Ventas Mayoreo</field>
+        <field name="code">sale.order.type.mayoreo</field>
+        <field name="prefix">COT-MAY/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_sale_type_mostrador" model="ir.sequence">
+        <field name="name">Ventas Mostrador / Retail</field>
+        <field name="code">sale.order.type.mostrador</field>
+        <field name="prefix">COT-MOS/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_sale_type_policies" model="ir.sequence">
+        <field name="name">Pólizas / Suscripciones Mensuales</field>
+        <field name="code">sale.order.type.policies</field>
+        <field name="prefix">COT-POL/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_sale_type_annual_contracts" model="ir.sequence">
+        <field name="name">Contratos y Licenciamiento Anual</field>
+        <field name="code">sale.order.type.annual.contracts</field>
+        <field name="prefix">COT-ANU/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+
+    <record model="sale.order.type" id="sale_type_matriz">
+        <field name="name">Sucursal Matriz</field>
+        <field name="sequence">5</field>
+        <field name="sequence_id" ref="seq_sale_type_matriz" />
+        <field name="description">Operaciones comerciales realizadas desde oficinas centrales / Matriz.</field>
+    </record>
+
+    <record model="sale.order.type" id="sale_type_norte">
+        <field name="name">Sucursal Norte</field>
+        <field name="sequence">10</field>
+        <field name="sequence_id" ref="seq_sale_type_norte" />
+        <field name="description">Ventas y pedidos atendidos por la Sucursal Norte.</field>
+    </record>
+
+    <record model="sale.order.type" id="sale_type_mayoreo">
+        <field name="name">Mayoreo</field>
+        <field name="sequence">15</field>
+        <field name="sequence_id" ref="seq_sale_type_mayoreo" />
+        <field name="description">Ventas por volumen a distribuidores y clientes mayoristas.</field>
+    </record>
+
+    <record model="sale.order.type" id="sale_type_mostrador">
+        <field name="name">Mostrador / Tienda</field>
+        <field name="sequence">20</field>
+        <field name="sequence_id" ref="seq_sale_type_mostrador" />
+        <field name="description">Ventas directas en punto de venta y mostrador.</field>
+    </record>
+
+    <record model="sale.order.type" id="sale_type_policies">
+        <field name="name">Pólizas / Suscripciones Mensuales</field>
+        <field name="sequence">25</field>
+        <field name="sequence_id" ref="seq_sale_type_policies" />
+        <field name="is_periodic">True</field>
+        <field name="billing_period_value">1</field>
+        <field name="billing_period_unit">month</field>
+        <field name="billing_first_day">True</field>
+        <field name="billing_day_of_month">1</field>
+        <field name="cash_flow_impact">True</field>
+        <field name="description">Servicios de soporte, pólizas de mantenimiento y suscripciones mensuales de clientes.</field>
+    </record>
+
+    <record model="sale.order.type" id="sale_type_annual_contracts">
+        <field name="name">Contratos y Licenciamiento Anual</field>
+        <field name="sequence">30</field>
+        <field name="sequence_id" ref="seq_sale_type_annual_contracts" />
+        <field name="is_periodic">True</field>
+        <field name="billing_period_value">1</field>
+        <field name="billing_period_unit">year</field>
+        <field name="billing_first_day">True</field>
+        <field name="billing_day_of_month">1</field>
+        <field name="cash_flow_impact">True</field>
+        <field name="description">Contratos anuales, renovaciones de licencias y pólizas con cobertura anual.</field>
+    </record>
+</odoo>

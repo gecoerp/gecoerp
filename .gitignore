@@ -1,0 +1,64 @@
+# ==============================================================================
+# GECO ERP V1 - .gitignore
+# ==============================================================================
+
+# Python Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# Odoo Runtime, Logs & Temporary Files
+*.log
+*.dump
+*.sql
+*.tar.gz
+*.zip
+filestore/
+sessions/
+addons/**/__pycache__/
+*.stackdump
+
+# Large/Private Asset Files
+addons/*.zip
+addons/*.pdf
+
+# Backups & Temp Addons
+addons/*_backup*/
+addons/geco_ui_theme_core_backup_v1/
+
+# Core Odoo 18 Base Repo (si se clona externamente)
+odoo-18.0/
+
+# Operating System & IDE Artifacts
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Agent / Scratch Workspace Files
+scratch/
+tmp/
+.gemini/
+.claude/

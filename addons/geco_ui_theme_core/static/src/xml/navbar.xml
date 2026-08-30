@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Inherit and enhance AppsMenu in Navbar with GECOERP Badge -->
+    <t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_navbar_apps_menu')]//button" position="replace">
+            <button data-hotkey="h" title="Menú de Aplicaciones GECOERP" class="geco_apps_launcher_btn d-flex align-items-center">
+                <i class="oi oi-apps me-2 brand_icon"/>
+                <span class="geco_brand_title">GECO<span class="brand_accent ms-1">ERP</span></span>
+                <i class="oi oi-chevron-down ms-2 brand_caret"/>
+            </button>
+        </xpath>
+    </t>
+</templates>

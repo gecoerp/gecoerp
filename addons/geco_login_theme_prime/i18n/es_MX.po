@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* geco_login_theme_prime
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-03 00:00+0000\n"
+"PO-Revision-Date: 2026-08-03 00:00+0000\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: geco_login_theme_prime
+msgid "Plataforma Interna"
+msgstr "Plataforma Interna"
+
+#. module: geco_login_theme_prime
+msgid "No es otro ERP. "
+msgstr "No es otro ERP. "
+
+#. module: geco_login_theme_prime
+msgid "Es el que te hace crecer."
+msgstr "Es el que te hace crecer."
+
+#. module: geco_login_theme_prime
+msgid "Ventas, compras, inventario y facturación conectados en un solo lugar con la potencia de la Inteligencia Artificial."
+msgstr "Ventas, compras, inventario y facturación conectados en un solo lugar con la potencia de la Inteligencia Artificial."
+
+#. module: geco_login_theme_prime
+msgid "Bienvenido"
+msgstr "Bienvenido"
+
+#. module: geco_login_theme_prime
+msgid "Accede con tu cuenta autorizada"
+msgstr "Accede con tu cuenta autorizada"
+
+#. module: geco_login_theme_prime
+msgid "Base de Datos"
+msgstr "Base de Datos"
+
+#. module: geco_login_theme_prime
+msgid "Correo o usuario"
+msgstr "Correo o usuario"
+
+#. module: geco_login_theme_prime
+msgid "Contraseña"
+msgstr "Contraseña"
+
+#. module: geco_login_theme_prime
+msgid "Mostrar/Ocultar contraseña"
+msgstr "Mostrar/Ocultar contraseña"
+
+#. module: geco_login_theme_prime
+msgid "Consejo:"
+msgstr "Consejo:"
+
+#. module: geco_login_theme_prime
+msgid "Usa las credenciales con las que inicias sesión en Odoo."
+msgstr "Usa las credenciales con las que inicias sesión en Odoo."
+
+#. module: geco_login_theme_prime
+msgid "Iniciar sesión"
+msgstr "Iniciar sesión"
+
+#. module: geco_login_theme_prime
+msgid "Iniciar sesión como superusuario"
+msgstr "Iniciar sesión como superusuario"
+
+#. module: geco_login_theme_prime
+msgid "Gestionar bases de datos"
+msgstr "Gestionar bases de datos"
+
+#. module: geco_login_theme_prime
+msgid "Tecnología GECO"
+msgstr "Tecnología GECO"
+

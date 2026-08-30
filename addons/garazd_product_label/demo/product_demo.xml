@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <!-- Corner Desk Right Sit -->
+    <record id="product.product_product_5" model="product.product">
+        <field name="barcode">3333000022222</field>
+    </record>
+    <!-- Storage Box -->
+    <record id="product.product_product_7" model="product.product">
+        <field name="barcode">0123456789017</field>
+    </record>
+    <!-- Monitor Stand -->
+    <record id="product.monitor_stand" model="product.product">
+        <field name="barcode">0700020543219</field>
+    </record>
+    <!-- Flipover -->
+    <record id="product.product_product_20" model="product.product">
+        <field name="barcode">01234090543216</field>
+    </record>
+
+</odoo>

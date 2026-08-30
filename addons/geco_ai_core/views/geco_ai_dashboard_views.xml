@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Declaramos la Acción de Cliente para el Dashboard -->
+    <record id="action_geco_ai_dashboard" model="ir.actions.client">
+        <field name="name">GECO AI Analytics</field>
+        <field name="tag">geco_ai_dashboard_action</field>
+    </record>
+    
+    <!-- Agregamos el menú del dashboard -->
+    <menuitem id="menu_geco_ai_dashboard" 
+              name="Dashboard" 
+              parent="menu_geco_ai_root" 
+              action="action_geco_ai_dashboard" 
+              sequence="1"/>
+</odoo>

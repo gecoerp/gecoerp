@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<record id="view_mcp_tool_search" model="ir.ui.view">
+		<field name="name">geco_mcp.tool.search</field>
+		<field name="model">geco_mcp.tool</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>
+				<field name="description"/>
+				<field name="category"/>
+				<field name="registry"/>
+				<filter name="active" string="Active" domain="[('active', '=', True)]"/>
+				<filter name="auto_synced" string="Código Python" domain="[('is_auto_synced', '=', True)]"/>
+				<filter name="manual" string="Personalizadas" domain="[('is_auto_synced', '=', False)]"/>
+                <group>
+					<filter name="group_category" string="Category" context="{'group_by': 'category'}"/>
+					<filter name="group_registry" string="Registry" context="{'group_by': 'registry'}"/>
+					<filter name="group_auto_synced" string="Origen" context="{'group_by': 'is_auto_synced'}"/>
+                </group>
+			</search>
+		</field>
+	</record>
+
+	<record id="view_mcp_tool_tree" model="ir.ui.view">
+		<field name="name">geco_mcp.tool.tree</field>
+		<field name="model">geco_mcp.tool</field>
+		<field name="arch" type="xml">
+			<list>
+				<field name="sequence" widget="handle"/>
+				<field name="name"/>
+				<field name="description"/>
+				<field
+					name="category"
+					widget="badge"
+					decoration-success="category == 'read'"
+					decoration-warning="category == 'write'"
+				/>
+				<field
+					name="registry"
+					widget="badge"
+					decoration-muted="not registry"
+				/>
+				<field name="is_auto_synced" string="Código Python"/>
+				<field name="active" widget="boolean_toggle"/>
+			</list>
+		</field>
+	</record>
+
+	<record id="view_mcp_tool_form" model="ir.ui.view">
+		<field name="name">geco_mcp.tool.form</field>
+		<field name="model">geco_mcp.tool</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<field name="is_auto_synced" invisible="1"/>
+					<div class="alert alert-info" role="alert" invisible="not is_auto_synced">
+						Esta tool viene de un método Python decorado con <code>@mcp_tool</code> —
+						se regenera sola en cada arranque/actualización de módulos. Para cambiar su
+						comportamiento, edita el código fuente del módulo, no este registro. Aquí
+						solo puedes activarla/desactivarla o cambiar su orden.
+					</div>
+					<div class="oe_title">
+						<h1>
+							<field name="name" placeholder="Tool Name" readonly="is_auto_synced"/>
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="category" readonly="is_auto_synced"/>
+							<field name="registry" readonly="is_auto_synced"/>
+							<field name="sequence"/>
+						</group>
+						<group>
+							<field name="active" widget="boolean_toggle"/>
+						</group>
+					</group>
+					<notebook>
+						<page string="Description" name="description">
+							<field
+								name="description"
+								placeholder="Describe what this tool does..."
+								readonly="is_auto_synced"
+							/>
+						</page>
+						<page string="Python Code" name="code">
+							<field
+								name="code"
+								widget="ace"
+								options="{'mode': 'python'}"
+								readonly="is_auto_synced"
+							/>
+						</page>
+						<page string="Input Schema" name="schema">
+							<field
+								name="input_schema"
+								widget="ace"
+								options="{'mode': 'javascript'}"
+								readonly="is_auto_synced"
+							/>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_mcp_tool" model="ir.actions.act_window">
+		<field name="name">MCP Tools</field>
+		<field name="res_model">geco_mcp.tool</field>
+		<field name="view_mode">list,form</field>
+		<field name="context">{'search_default_active': 1}</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				No MCP tools configured.
+			</p>
+			<p>
+				Tools are automatically created when the module is installed.
+				You can add custom tools here.
+			</p>
+		</field>
+	</record>
+
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_geco_ai_root" 
+              name="GECO AI" 
+              web_icon="geco_ai_core,static/description/icon.png"
+              sequence="5"/>
+
+    <menuitem id="menu_geco_ai_logs" 
+              name="Consumption Logs" 
+              parent="menu_geco_ai_root" 
+              action="action_geco_ai_log" 
+              sequence="10"/>
+
+    <menuitem id="menu_geco_ai_test_wizard" 
+              name="Verify Connection" 
+              parent="menu_geco_ai_root" 
+              action="action_geco_ai_test_wizard" 
+              sequence="50"/>
+              
+    <menuitem id="menu_geco_ai_settings" 
+              name="Settings" 
+              parent="menu_geco_ai_root" 
+              action="base_setup.action_general_configuration" 
+              sequence="100"/>
+</odoo>

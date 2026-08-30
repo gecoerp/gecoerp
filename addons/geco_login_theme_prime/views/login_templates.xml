@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Custom Login Layout: Split Hero + Form Container -->
+        <template id="geco_login_layout" inherit_id="web.login_layout" name="GECO Modern Login Layout">
+            <xpath expr="//div[contains(@class, 'container')]" position="replace">
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+                <div class="geco_login_page_container">
+                    <div class="geco_login_wrapper">
+                        
+                        <!-- Left Hero Section -->
+                        <div class="geco_login_hero">
+                            <div class="geco_hero_top">
+                                <div class="geco_top_badge">
+                                    <i class="fa fa-building-o" aria-hidden="true"/>
+                                    <span>Plataforma Interna</span>
+                                </div>
+                                
+                                <div class="geco_brand_logo_area">
+                                    <img t-attf-src="/web/binary/company_logo{{ '?dbname='+db if db else '' }}" 
+                                         alt="Logo" 
+                                         class="geco_brand_logo_img"/>
+                                </div>
+                                
+                                <h1 class="geco_hero_headline">
+                                    No es otro ERP. <span class="highlight">Es el que te hace crecer.</span>
+                                </h1>
+                                
+                                <p class="geco_hero_description">
+                                    Ventas, compras, inventario y facturación conectados en un solo lugar con la potencia de la Inteligencia Artificial.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right Card Column -->
+                        <div class="geco_login_card_column">
+                            <div class="geco_login_card">
+                                <div class="geco_card_header">
+                                    <h2 class="geco_card_title">Bienvenido</h2>
+                                    <p class="geco_card_subtitle">Accede con tu cuenta autorizada</p>
+                                </div>
+
+                                <!-- Main Login Form (t-out 0) -->
+                                <t t-out="0"/>
+
+                                <!-- Footer Links inside Card -->
+                                <div class="geco_card_links" t-if="not disable_footer">
+                                    <t t-if="not disable_database_manager">
+                                        <a class="geco_link me-2" href="/web/database/manager">Gestionar bases de datos</a>
+                                        <span class="text-muted">•</span>
+                                    </t>
+                                    <a class="geco_link ms-2" href="https://www.gecoerp.com" target="_blank">Tecnología GECO</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <!-- Custom Login Form Template Override -->
+        <template id="geco_login_form" inherit_id="web.login" name="GECO Modern Login Form">
+            <xpath expr="//form" position="replace">
+                <form class="oe_login_form geco_custom_login_form" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <!-- Database Selector (if multiple) -->
+                    <div class="geco_field_group geco_db_selector" t-if="databases and len(databases) &gt; 1">
+                        <label for="db" class="geco_label">Base de Datos</label>
+                        <div class="input-group">
+                            <input type="text" name="db" t-att-value="request.db" id="db" class="geco_form_control" required="required" readonly="readonly"/>
+                            <a role="button" href="/web/database/selector" class="btn btn-outline-secondary">
+                                <i class="fa fa-database" role="img" aria-label="Database"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Email / Username Input -->
+                    <div class="geco_field_group">
+                        <label for="login" class="geco_label">Correo o usuario</label>
+                        <div class="geco_input_relative">
+                            <i class="fa fa-user-o geco_input_icon" aria-hidden="true"/>
+                            <input type="text" 
+                                   placeholder="usuario@empresa.com" 
+                                   name="login" 
+                                   t-att-value="login" 
+                                   id="login" 
+                                   class="geco_form_control" 
+                                   required="required" 
+                                   autocomplete="username" 
+                                   autofocus="autofocus" 
+                                   autocapitalize="off"/>
+                        </div>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="geco_field_group">
+                        <label for="password" class="geco_label">Contraseña</label>
+                        <div class="geco_input_relative">
+                            <i class="fa fa-lock geco_input_icon" aria-hidden="true"/>
+                            <input type="password" 
+                                   placeholder="••••••••" 
+                                   name="password" 
+                                   id="password" 
+                                   class="geco_form_control" 
+                                   required="required" 
+                                   autocomplete="current-password" 
+                                   t-att-autofocus="'autofocus' if login else None" 
+                                   maxlength="4096"/>
+                            <button type="button" class="geco_pwd_toggle_btn" title="Mostrar/Ocultar contraseña">
+                                <i class="fa fa-eye" aria-hidden="true"/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Alert Messages -->
+                    <div class="alert alert-danger py-2 px-3 mb-3 small" t-if="error" role="alert">
+                        <i class="fa fa-exclamation-triangle me-1" aria-hidden="true"/>
+                        <t t-esc="error"/>
+                    </div>
+                    <div class="alert alert-success py-2 px-3 mb-3 small" t-if="message" role="status">
+                        <i class="fa fa-check-circle me-1" aria-hidden="true"/>
+                        <t t-esc="message"/>
+                    </div>
+
+                    <!-- Tip Box -->
+                    <div class="geco_tip_box">
+                        <i class="fa fa-lightbulb-o geco_tip_icon" aria-hidden="true"/>
+                        <div>
+                            <strong>Consejo:</strong> Usa las credenciales con las que inicias sesión en Odoo.
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="geco_field_group pt-2">
+                        <button type="submit" class="geco_btn_submit">
+                            <span>Iniciar sesión</span>
+                            <i class="fa fa-arrow-right" aria-hidden="true"/>
+                        </button>
+                        
+                        <t t-if="debug">
+                            <button type="submit" name="redirect" value="/web/become" class="btn btn-link btn-sm w-100 mt-2 text-muted">
+                                Iniciar sesión como superusuario
+                            </button>
+                        </t>
+                        <div class="o_login_auth"/>
+                    </div>
+
+                    <input type="hidden" name="type" value="password"/>
+                    <input type="hidden" name="redirect" t-att-value="redirect"/>
+                </form>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- La conversación de cada contacto vive en su propio chatter (como correos y
+         notas). Esta pantalla es solo una vista de consulta general: contactos con
+         actividad de WhatsApp, ordenados por el mensaje más reciente. -->
+    <record id="view_geco_whatsapp_recent_partner_tree" model="ir.ui.view">
+        <field name="name">res.partner.whatsapp.recent.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list default_order="whatsapp_last_message_date desc">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="mobile"/>
+                <field name="whatsapp_last_message_direction" string="Dirección"/>
+                <field name="whatsapp_last_message_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_geco_whatsapp_recent" model="ir.actions.act_window">
+        <field name="name">WhatsApp</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_geco_whatsapp_recent_partner_tree"/>
+        <field name="domain">[('whatsapp_last_message_date', '!=', False)]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Todavía no hay actividad de WhatsApp.
+            </p>
+            <p>
+                Aquí aparecen los contactos con mensajes recientes de WhatsApp, del más
+                reciente al más antiguo. Da clic en un contacto para ver la conversación
+                completa en su ficha, igual que correos, notas y actividades.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_geco_whatsapp_root"
+              name="WhatsApp"
+              web_icon="geco_whatsapp,static/description/icon.png"
+              action="action_geco_whatsapp_recent"
+              sequence="10"/>
+
+</odoo>

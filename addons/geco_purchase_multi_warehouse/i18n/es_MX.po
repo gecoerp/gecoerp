@@ -1,0 +1,43 @@
+# Translation of GECOERP Server.
+# This file contains the translation of the following modules:
+# 	* geco_purchase_multi_warehouse
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GECOERP Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-27 18:00+0000\n"
+"PO-Revision-Date: 2026-08-27 18:00+0000\n"
+"Last-Translator: GECOERP <soporte@gecoerp.com>\n"
+"Language-Team: Spanish <es@gecoerp.com>\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: geco_purchase_multi_warehouse
+#: model:ir.model,name:geco_purchase_multi_warehouse.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea de orden de compra"
+
+#. module: geco_purchase_multi_warehouse
+#: model:ir.model.fields,field_description:geco_purchase_multi_warehouse.field_purchase_order_line__picking_type_id
+msgid "Deliver To / Warehouse"
+msgstr "Entregar en / Almacén"
+
+#. module: geco_purchase_multi_warehouse
+#: model:ir.model.fields,help:geco_purchase_multi_warehouse.field_purchase_order_line__picking_type_id
+msgid "Specific operation type or delivery warehouse for this line."
+msgstr "Tipo de operación o almacén de entrega específico para esta línea."
+
+#. module: geco_purchase_multi_warehouse
+#: code:addons/geco_purchase_multi_warehouse/models/purchase_order.py:0
+#, python-format
+msgid "You must configure a supplier location for partner %s"
+msgstr "Debe configurar una ubicación de proveedor para el contacto %s"
+
+#. module: geco_purchase_multi_warehouse
+#: model_terms:ir.ui.view,arch_db:geco_purchase_multi_warehouse.report_purchaseorder_document_deliver_to
+msgid "Deliver To"
+msgstr "Entregar en"

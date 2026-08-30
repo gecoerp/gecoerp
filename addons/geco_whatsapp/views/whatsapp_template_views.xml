@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_geco_whatsapp_template_tree" model="ir.ui.view">
+        <field name="name">geco.whatsapp.template.tree</field>
+        <field name="model">geco.whatsapp.template</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="model_id"/>
+                <field name="phone_field"/>
+                <field name="report_id"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_geco_whatsapp_template_form" model="ir.ui.view">
+        <field name="name">geco.whatsapp.template.form</field>
+        <field name="model">geco.whatsapp.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Nombre de la plantilla"/></h1>
+                    </div>
+                    <field name="model" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="model_id"/>
+                            <field name="phone_field"/>
+                            <field name="report_id"/>
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle"/>
+                            <field name="sequence"/>
+                        </group>
+                    </group>
+                    <group string="Mensaje">
+                        <field name="body" nolabel="1" placeholder="Hola {{ object.partner_id.name }}, ..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_geco_whatsapp_template" model="ir.actions.act_window">
+        <field name="name">Plantillas de WhatsApp</field>
+        <field name="res_model">geco.whatsapp.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No hay plantillas de WhatsApp configuradas.
+            </p>
+            <p>
+                Crea una plantilla por cada modelo (Factura, Cotización, etc.) para que el botón
+                "Enviar por WhatsApp" aparezca automáticamente en esos documentos.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_geco_whatsapp_templates"
+              name="Plantillas"
+              parent="menu_geco_whatsapp_root"
+              action="action_geco_whatsapp_template"
+              groups="base.group_system"
+              sequence="20"/>
+
+</odoo>

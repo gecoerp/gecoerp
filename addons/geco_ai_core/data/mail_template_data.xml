@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="email_template_geco_ai_token_alert" model="mail.template">
+            <field name="name">GECO AI: Alerta de Límite de Tokens</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="subject">ALERTA GECO AI: Consumo de tokens cercano al límite ({{ object.company_id.name }})</field>
+            <field name="email_to">{{ ctx.get('alert_email', 'admin@example.com') }}</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Hola Administrador,<br/><br/>
+        El sistema <strong>GECO AI</strong> ha detectado que el consumo de tokens de Inteligencia Artificial está a punto de alcanzar o superar el límite establecido.
+    </p>
+    <br/>
+    <ul>
+        <li><strong>Límite Configurado:</strong> <t t-out="ctx.get('token_limit') or 0"/> tokens mensuales</li>
+        <li><strong>Consumo Actual:</strong> <t t-out="ctx.get('current_tokens') or 0"/> tokens</li>
+        <li><strong>Porcentaje de Uso:</strong> <t t-out="ctx.get('usage_percent') or 0"/>%</li>
+    </ul>
+    <br/>
+    <p>Por favor, ajusta tu presupuesto en el módulo Ajustes &gt; GECO AI para evitar interrupciones en el servicio.</p>
+    <br/>
+    <p>Saludos,<br/>Tu GECO AI Master Engine</p>
+</div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>
