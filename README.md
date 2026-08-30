@@ -1,9 +1,9 @@
 # GECO ERP
 
 [![1.0 build](https://img.shields.io/badge/1.0-success-4c1?style=flat-square)](https://github.com/gecoerp/gecoerp)
-[![1.0 docs](https://img.shields.io/badge/1.0-docs-714B67?style=flat-square)](https://www.gecoerp.com)
-[![1.0 help](https://img.shields.io/badge/1.0-help-714B67?style=flat-square)](https://www.gecoerp.com)
-[![1.0 releases](https://img.shields.io/badge/1.0-releases-714B67?style=flat-square)](https://github.com/gecoerp/gecoerp/releases)
+[![1.0 docs](https://img.shields.io/badge/1.0-docs-0066cc?style=flat-square)](https://www.gecoerp.com)
+[![1.0 help](https://img.shields.io/badge/1.0-help-0066cc?style=flat-square)](https://www.gecoerp.com)
+[![1.0 releases](https://img.shields.io/badge/1.0-releases-0066cc?style=flat-square)](https://github.com/gecoerp/gecoerp/releases)
 
 GECO ERP is a suite of modern enterprise business applications.
 
