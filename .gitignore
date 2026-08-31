@@ -25,9 +25,12 @@ build/
 *.conf
 *.bat
 odoo-bin
-gecoerp-bin
 BITACORA*
 sites-enabled/
+
+# Temporary migration folders
+gecoerp-1.0/
+
 
 
 # Odoo Runtime, Logs & Temporary Files
